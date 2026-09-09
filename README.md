@@ -1,10 +1,10 @@
 # Contour Lines (Ada 2023)
 
 Educational Ada 2023 implementation of **contour lines** (**isolines** /
-**isopleths**): curves where a scalar field \(f(x,y)\) has a constant value
+**isopleths**): curves where a scalar field $f(x,y)$ has a constant value
 (a level set). In cartography, contours join points of equal elevation; the
 **contour interval** is the elevation difference between successive lines.
-The gradient of \(f\) is always **perpendicular** to the contour; when lines
+The gradient of $f$ is always **perpendicular** to the contour; when lines
 lie close together the magnitude of the gradient is large (steep slopes).
 
 Based on the principles described in
@@ -21,7 +21,7 @@ companion repository **Ada-Marching-Squares**.
 A contour map is built from an arithmetic sequence of levels
 `Min_Level + k·Interval`. Each level is extracted as a polyline of edge-
 interpolated segments. Educational helpers cover bilinear sampling, numerical
-gradients and orthogonality checks, slope classification from \(|∇f|\),
+gradients and orthogonality checks, slope classification from $|∇f|$,
 transect profiles (plan view vs profile view), and iso-* labeling names
 (isobar, isotherm, isohyet, isobath, …).
 
@@ -33,7 +33,7 @@ Language: **Ada 2023** (ISO/IEC 8652:2023), compiled with GNAT (`-gnat2022`).
 | --- | --- | --- |
 | Contour interval | `Contour_Level_Count` / `Level_From_Index` / `Contour_Interval_Of` | Arithmetic level sequences |
 | Sampling | `Sample_Height_Field` / `Bilinear_Sample` | Grid and bilinear field samples |
-| Gradient | `Gradient_2D` / `Gradient_Perpendicular_Check` | \(∇f\) and ⊥-to-contour check |
+| Gradient | `Gradient_2D` / `Gradient_Perpendicular_Check` | $∇f$ and ⊥-to-contour check |
 | Cell / level isolines | `Trace_Isoline_Cell` / `Extract_Isolines_At_Level` | Compact 2×2 extraction |
 | Contour map | `Build_Contour_Map` | Multi-level isolines at a contour interval |
 | Spacing | `Classify_Spacing` / `Spacing_From_Gradient` | Flat…Cliff from \|∇f\| |
